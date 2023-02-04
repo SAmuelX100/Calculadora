@@ -1,0 +1,1 @@
+const botones = document.querySelectorAll('.key');
