@@ -75,8 +75,30 @@
     height: 0;
     padding-top: 100%;
     background-color: #262933;
-    border-radius: 1.12rem;
+    border-radius: 1.15rem;
     transition: 0.2s;
     user-select: none;
+}
 
+.botones .key span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 2rem;
+    font-weight: 700;
+    color: aliceblue;
+}
+
+.botones .key:hover {
+    box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.botones .key.operator span {
+    color: brown;
+}
+
+.botones .key.action span {
+    color: rgb(84, 143, 111);
 }
