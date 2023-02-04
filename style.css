@@ -22,3 +22,12 @@
     border-radius: 1.5rem;
     overflow: hidden;
 }
+
+.pantalla {
+    min-height: 200px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+}
