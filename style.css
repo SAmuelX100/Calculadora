@@ -29,5 +29,39 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    color: antiquewhite;
+    text-align: right;
+    flex: 1 1 0%;
+}
 
+.pantalla .entrada {
+    font-size: 1.32rem;
+    margin-bottom: 0.6rem;
+}
+
+.pantalla .salida {
+    font-size: 3.1rem;
+    font-weight: 705;
+    width: 100%;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.pantalla .operador {
+    color: brown;
+}
+
+.pantalla .parentesis,
+.pantalla .percent {
+    color: rgb(84, 143, 111);
+}
+
+.botones {
+    background-color: #292d36;
+    padding: 1.5rem;
+    border-radius: 1.5rem 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 1rem;
 }
