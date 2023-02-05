@@ -16,9 +16,9 @@ for (let key of botones) {
             entrada = entrada.slice(0, -1);
             pantalla_entrada.innerHTML = LimpiarEntrada(entrada);
         } else if (value == "=") {
-            let resultado = eval(entrada);
+            let resultado = eval(PrepararEntrada(entrada));
 
-            pantalla_salida.innerHTML = resultado;
+            pantalla_salida.innerHTML = LimpiarSalida(resultado);
         } else if (value == "parentesis") {
             if (entrada.indexOf("(") == -1 || entrada.indexOf("(") != -1 && entrada.indexOf(")") != -1 && entrada.lastIndexOf("(") < entrada.lastIndexOf(")")) {
                 entrada += "(";
@@ -34,12 +34,17 @@ for (let key of botones) {
             pantalla_entrada.innerHTML = LimpiarEntrada(entrada);
 
         } else {
-            entrada += value;
-            pantalla_entrada.innerHTML = LimpiarEntrada(entrada);
+            if (ValidarEntrada(value)) {
+                entrada += value;
+                pantalla_entrada.innerHTML = LimpiarEntrada(entrada);
+            }
         }
 
     })
 }
+
+
+// Declaracion de funciones
 
 function LimpiarEntrada(entrada) {
 
