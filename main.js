@@ -70,6 +70,23 @@ function LimpiarEntrada(entrada) {
 }
 
 function LimpiarSalida(salida) {
+    let salida_string = salida.toString();
+    let decimal = salida_string.split(".")[1];
+    salida_string = salida_string.split(".")[0];
 
+    let salida_array = salida_string.split("");
 
+    if (salida_array.length > 3) {
+        for (let i = salida_array.length - 3; i > 0; i -= 3) {
+            salida_array.splice(i, 0, ",");
+        }
+    }
+
+    if (decimal) {
+        salida_array.push(".");
+        salida_array.push(decimal);
+    }
+
+    return salida_array.join("");
 }
+
