@@ -90,3 +90,22 @@ function LimpiarSalida(salida) {
     return salida_array.join("");
 }
 
+function ValidarEntrada(value) {
+
+    let ultima_entrada = entrada.slice(-1);
+    let operadores = ["+", "-", "*", "/"];
+
+    if (value == "." && ultima_entrada == ".") {
+        return false;
+    }
+
+    if (operadores.includes(value)) {
+        if (operadores.includes(ultima_entrada)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    return true;
+}
