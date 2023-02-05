@@ -110,3 +110,15 @@ function ValidarEntrada(value) {
     return true;
 }
 
+function PrepararEntrada(entrada) {
+    let entrada_array = entrada.split("");
+
+    for (let i = 0; i < entrada_array.length; i++) {
+        if (entrada_array[i] == "%") {
+            entrada_array[i] = "/100";
+        }
+    }
+
+    return entrada_array.join("");
+}
+
