@@ -14,7 +14,7 @@ for (let key of botones) {
             pantalla_salida.innerHTML = "";
         } else if (value == "backspace") {
             entrada = entrada.slice(0, -1);
-            pantalla_entrada.innerHTML = entrada;
+            pantalla_entrada.innerHTML = LimpiarEntrada(entrada);
         } else if (value == "=") {
             let resultado = eval(entrada);
 
@@ -31,11 +31,11 @@ for (let key of botones) {
                 entrada += ")";
             }
 
-            pantalla_entrada.innerHTML = entrada;
+            pantalla_entrada.innerHTML = LimpiarEntrada(entrada);
 
         } else {
             entrada += value;
-            pantalla_entrada.innerHTML = entrada;
+            pantalla_entrada.innerHTML = LimpiarEntrada(entrada);
         }
 
     })
@@ -44,4 +44,32 @@ for (let key of botones) {
 function LimpiarEntrada(entrada) {
 
     let entrada_array = entrada.split("");
+    let entrada_array_lenght = entrada_array.length;
+
+    for (let i = 0; i < entrada_array_lenght; i++) {
+        if (entrada_array[i] == "*") {
+            entrada_array[i] = '<span class= "operador"> x </span>';
+        } else if (entrada_array[i] == "/") {
+            entrada_array[i] = '<span class= "operador"> ÷ </span>';
+        } else if (entrada_array[i] == "+") {
+            entrada_array[i] = '<span class= "operador"> + </span>';
+        } else if (entrada_array[i] == "-") {
+            entrada_array[i] = '<span class= "operador"> - </span>';
+        } else if (entrada_array[i] == "+") {
+            entrada_array[i] = '<span class= "operator"> + </span>';
+        } else if (entrada_array[i] == "(") {
+            entrada_array[i] = ' <span class= "parentesis">(</span>';
+        } else if (entrada_array[i] == ")") {
+            entrada_array[i] = ' <span class= "parentesis">)</span>';
+        } else if (entrada_array[i] == "%") {
+            entrada_array[i] = ' <span class= "percent"> % </span>';
+        }
+    }
+
+    return entrada_array.join("");
+}
+
+function LimpiarSalida(salida) {
+
+
 }
